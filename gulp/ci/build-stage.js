@@ -5,5 +5,5 @@ var runSequence = require('run-sequence');
 
 
 gulp.task('build:stage', function (callback) {
-    runSequence('clean', 'env:prod', ['less', 'images', 'copy', 'scripts'], callback);
+    runSequence('lint', ['clean', 'env:prod'], ['less', 'images', 'copy', 'scripts'], callback);
 });

@@ -1,0 +1,11 @@
+{
+    "unused": true,
+    "camelcase": true,
+    "unused": true,
+    "strict": true,
+    "globalstrict": true,
+    "globals": {
+        "require": false,
+        "module": false
+    }
+}

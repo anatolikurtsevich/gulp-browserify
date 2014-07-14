@@ -10,12 +10,8 @@ require('./templates');
 /* app modules */
 var core = require('./modules/core');
 
-
 angular.module('app', [
     uiRouter,
     'app.templates',
     core.name
 ]);
-
-
-
