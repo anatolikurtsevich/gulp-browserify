@@ -1,4 +1,4 @@
-Gulp/Browserify/Angular/Less web-starter
+Web-starter: Gulp/Browserify/Angular/Less
 ===============
 
 Possible gulp tasks:
