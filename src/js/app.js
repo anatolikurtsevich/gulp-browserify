@@ -10,8 +10,14 @@ require('./templates');
 /* app modules */
 var core = require('./modules/core');
 
+
 angular.module('app', [
+    // third-party
     uiRouter,
+
+    // templates
     'app.templates',
+
+    // modules
     core.name
 ]);
