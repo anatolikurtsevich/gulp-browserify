@@ -1,35 +1,33 @@
 'use strict';
 
-var gulp         = require('gulp');
-var browserify   = require('browserify');
-var clean        = require('gulp-clean');
-var watchify     = require('watchify');
+var gulp = require('gulp');
+var browserify = require('browserify');
+var clean = require('gulp-clean');
 var bundleLogger = require('../util/bundleLogger');
 var handleErrors = require('../util/handleErrors');
-var source       = require('vinyl-source-stream');
-var runSequence  = require('run-sequence');
+var source = require('vinyl-source-stream');
+var runSequence = require('run-sequence');
 
 
-gulp.task('tempifyJS', function(){
+gulp.task('tempifyJS', function () {
     return gulp.src('./src/js/**/*.js')
         .pipe(gulp.dest('./build/.tmp/js'));
 });
 
 
-gulp.task('untempifyJS', function(){
+gulp.task('untempifyJS', function () {
     return gulp.src('./build/.tmp')
         .pipe(clean({force: true}));
 });
 
 
-gulp.task('browserifyJS', function(){
-//    var bundleMethod = global.isWatching ? [watchify, './src/js/app.js'] : [browserify, './build/'];
+gulp.task('browserifyJS', function () {
 
     var bundler = browserify({
         entries: ['./build/.tmp/js/app.js']
     });
 
-    var bundle = function() {
+    var bundle = function () {
         // Log when bundling starts
         bundleLogger.start();
 
@@ -52,6 +50,6 @@ gulp.task('browserifyJS', function(){
 });
 
 
-gulp.task('scripts', function(callback){
+gulp.task('scripts', function (callback) {
     runSequence(['tempifyJS', 'templates'], 'browserifyJS', 'untempifyJS', callback);
 });

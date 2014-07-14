@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean');
 
 
-gulp.task('clean', function(){
+gulp.task('clean', function () {
     return gulp.src('./build')
         .pipe(clean({
             force: true

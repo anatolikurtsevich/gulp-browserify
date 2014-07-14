@@ -13,7 +13,7 @@ gulp.task('templates', function () {
     return gulp.src('./src/html/templates/**/*ng-tmpl.html')
         .pipe(htmlify())
         .pipe(minify())
-        .pipe(rename(function(path){
+        .pipe(rename(function (path) {
             path.basename = path.basename.replace('.ng-tmpl', '');
             path.extname = '';
         }))

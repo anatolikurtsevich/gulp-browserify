@@ -1,14 +1,14 @@
 'use strict';
 
-var changed    = require('gulp-changed');
-var gulp       = require('gulp');
-var imagemin   = require('gulp-imagemin');
+var changed = require('gulp-changed');
+var gulp = require('gulp');
+var imagemin = require('gulp-imagemin');
 
-gulp.task('images', function() {
-	var dest = './build/app/images';
+gulp.task('images', function () {
+    var dest = './build/app/images';
 
-	return gulp.src('./src/images/**')
-		.pipe(changed(dest)) // Ignore unchanged files
-		.pipe(imagemin()) // Optimize
-		.pipe(gulp.dest(dest));
+    return gulp.src('./src/images/**')
+        .pipe(changed(dest)) // Ignore unchanged files
+        .pipe(imagemin()) // Optimize
+        .pipe(gulp.dest(dest));
 });
