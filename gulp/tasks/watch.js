@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 
 
-gulp.task('watch', ['setWatch', 'serve'], function () {
+gulp.task('watch', ['serve'], function () {
     gulp.watch('src/less/**', ['less']);
     gulp.watch('src/images/**', ['images']);
     gulp.watch('src/html/index.html', ['copy']);

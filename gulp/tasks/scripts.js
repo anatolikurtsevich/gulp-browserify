@@ -7,6 +7,7 @@ var bundleLogger = require('../util/bundleLogger');
 var handleErrors = require('../util/handleErrors');
 var source = require('vinyl-source-stream');
 var runSequence = require('run-sequence');
+var gutil = require('gulp-util');
 
 
 gulp.task('tempifyJS', function () {
@@ -31,9 +32,11 @@ gulp.task('browserifyJS', function () {
         // Log when bundling starts
         bundleLogger.start();
 
+        gutil.log('debug = ' + global.testVar);
+
         return bundler
             // Enable source maps!
-            .bundle({debug: true})
+            .bundle({debug: global.debug})
             // Report compile errors
             .on('error', handleErrors)
             // Use vinyl-source-stream to make the

@@ -1,42 +1,41 @@
 {
-  "name": "NeighborhoodsFrontend",
-  "version": "0.0.0",
-  "description": "Separated frontend for venue portal.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"there are no tests.\""
-  },
-  "keywords": [
-    "ClassPass",
-    "Venue",
-    "Portal",
-    "FrontEnd",
-    "UI"
-  ],
-  "author": "ClassPass",
-  "license": "ISC",
-  "dependencies": {
-    "angular": "^1.2.19",
-    "angular-ui-router": "^0.2.10",
-    "browser-sync": "^1.2.1",
-    "browserify": "^4.2.0",
-    "gulp": "^3.8.6",
-    "gulp-angular-htmlify": "^0.2.1",
-    "gulp-angular-templatecache": "^1.2.1",
-    "gulp-changed": "^0.4.0",
-    "gulp-clean": "^0.3.1",
-    "gulp-imagemin": "^0.6.1",
-    "gulp-less": "^1.3.1",
-    "gulp-minify-html": "^0.1.4",
-    "gulp-notify": "^1.4.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-sourcemaps": "^0.4.5",
-    "gulp-uglify": "^0.3.1",
-    "gulp-util": "^2.2.20",
-    "pretty-hrtime": "^0.2.1",
-    "run-sequence": "^0.3.6",
-    "vinyl-source-stream": "^0.1.1",
-    "watchify": "^0.10.2"
-  },
-  "devDependencies": {}
+    "name": "Starter",
+    "version": "0.0.0",
+    "description": "Gulp-Browserify-Angular starter",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"there are no tests.\""
+    },
+    "keywords": [
+        "Gulp",
+        "Browserify",
+        "Angular",
+        "Bootstrap",
+        "Starter"
+    ],
+    "author": "Anatoli Kurtsevich",
+    "license": "ISC",
+    "dependencies": {
+        "angular": "^1.2.19",
+        "angular-ui-router": "^0.2.10",
+        "browser-sync": "^1.2.1",
+        "browserify": "^4.2.0",
+        "gulp": "^3.8.6",
+        "gulp-angular-htmlify": "^0.2.1",
+        "gulp-angular-templatecache": "^1.2.1",
+        "gulp-changed": "^0.4.0",
+        "gulp-clean": "^0.3.1",
+        "gulp-imagemin": "^0.6.1",
+        "gulp-less": "^1.3.1",
+        "gulp-minify-html": "^0.1.4",
+        "gulp-notify": "^1.4.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-sourcemaps": "^0.4.5",
+        "gulp-uglify": "^0.3.1",
+        "gulp-util": "^2.2.20",
+        "pretty-hrtime": "^0.2.1",
+        "run-sequence": "^0.3.6",
+        "vinyl-source-stream": "^0.1.1"
+    },
+    "devDependencies": {}
 }
