@@ -16,3 +16,6 @@ CI:
 
 
 Thanks <a href="//github.com/greypants/gulp-starter">greypants</a> for his "Gulp starter" repository.
+
+
+If you have any ideas to improve this starter please send a pull request.
