@@ -12,7 +12,7 @@ Possible gulp tasks:
 CI:
 - build:(dev/prod/stage)
 - serve:(dev/stage)
-- serve (just run server without building the project)
+- serve (just run a server without building the project)
 
 
 Thanks <a href="//github.com/greypants/gulp-starter">greypants</a> for his "Gulp starter" repository.
