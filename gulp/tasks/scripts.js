@@ -1,0 +1,57 @@
+'use strict';
+
+var gulp         = require('gulp');
+var browserify   = require('browserify');
+var clean        = require('gulp-clean');
+var watchify     = require('watchify');
+var bundleLogger = require('../util/bundleLogger');
+var handleErrors = require('../util/handleErrors');
+var source       = require('vinyl-source-stream');
+var runSequence  = require('run-sequence');
+
+
+gulp.task('tempifyJS', function(){
+    return gulp.src('./src/js/**/*.js')
+        .pipe(gulp.dest('./build/.tmp/js'));
+});
+
+
+gulp.task('untempifyJS', function(){
+    return gulp.src('./build/.tmp')
+        .pipe(clean({force: true}));
+});
+
+
+gulp.task('browserifyJS', function(){
+//    var bundleMethod = global.isWatching ? [watchify, './src/js/app.js'] : [browserify, './build/'];
+
+    var bundler = browserify({
+        entries: ['./build/.tmp/js/app.js']
+    });
+
+    var bundle = function() {
+        // Log when bundling starts
+        bundleLogger.start();
+
+        return bundler
+            // Enable source maps!
+            .bundle({debug: true})
+            // Report compile errors
+            .on('error', handleErrors)
+            // Use vinyl-source-stream to make the
+            // stream gulp compatible. Specify the
+            // desired output filename here.
+            .pipe(source('app.js'))
+            // Specify the output destination
+            .pipe(gulp.dest('./build/app/js'))
+            // Log when bundling completes!
+            .on('end', bundleLogger.end);
+    };
+
+    return bundle();
+});
+
+
+gulp.task('scripts', function(callback){
+    runSequence(['tempifyJS', 'templates'], 'browserifyJS', 'untempifyJS', callback);
+});
