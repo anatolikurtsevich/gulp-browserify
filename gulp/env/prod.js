@@ -3,6 +3,6 @@
 var gulp = require('gulp');
 
 
-gulp.task('prod', function () {
+gulp.task('env:prod', function () {
     global.debug = false;
 });

@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 
 
-gulp.task('dev', function () {
+gulp.task('env:dev', function () {
     global.debug = true;
-    global.testVar = 'hello';
 });

@@ -1,9 +1,0 @@
-'use strict';
-
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
-
-
-gulp.task('release', function (callback) {
-    runSequence('clean', 'prod', ['less', 'images', 'copy', 'scripts'], callback);
-});
