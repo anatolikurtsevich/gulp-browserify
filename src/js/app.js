@@ -15,7 +15,6 @@ angular.module('app', [
     uiRouter,
     'app.templates',
     core.name
-
 ]);
 
 

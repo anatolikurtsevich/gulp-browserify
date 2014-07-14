@@ -8,6 +8,7 @@ var handleErrors = require('../util/handleErrors');
 var source = require('vinyl-source-stream');
 var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
+var streamify = require('gulp-streamify');
 
 
 gulp.task('tempifyJS', function () {
@@ -32,7 +33,7 @@ gulp.task('browserifyJS', function () {
         // Log when bundling starts
         bundleLogger.start();
 
-        return bundler
+        bundler = bundler
             // Enable source maps!
             .bundle({debug: global.debug})
             // Report compile errors
@@ -40,14 +41,18 @@ gulp.task('browserifyJS', function () {
             // Use vinyl-source-stream to make the
             // stream gulp compatible. Specify the
             // desired output filename here.
+            .pipe(source('app.js'));
 
-            .pipe(source('app.js'))
+        if (!global.debug){
+            bundler = bundler.pipe(streamify(uglify()));
+        }
+
+        return bundler
             // Specify the output destination
             .pipe(gulp.dest('./build/app/js'))
             // Log when bundling completes!
             .on('end', bundleLogger.end);
     };
-
     return bundle();
 });
 
