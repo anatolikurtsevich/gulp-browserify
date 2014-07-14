@@ -1,2 +1,2 @@
-gulp-browserify
+gulp-browserify-angular-starter
 ===============
